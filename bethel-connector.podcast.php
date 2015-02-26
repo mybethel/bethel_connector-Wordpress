@@ -23,6 +23,7 @@ class Bethel_Podcast {
     $matches = get_terms($options['bethel_podcast_taxonomy'], array('name__like' => $series));
 
     header('Content-Type: application/json; charset=utf-8');
+    header('Access-Control-Allow-Origin: *');
     echo json_encode(array('results' => $this->format_results($matches)));
 
     exit();
